@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mpoulhazan.websocket</groupId>
+    <artifactId>websocket-app</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <distributionManagement>
+        <!-- Repository de Releases. -->
+        <repository>
+            <id>DTO-releases</id>
+            <name>Releases Repository</name>
+            <url>https://ul.tsc-nantes.com/nexus/repository/DTO-releases</url>
+        </repository>
+        <!-- Repository de Snapshots. -->
+        <snapshotRepository>
+            <id>DTO-snapshots</id>
+            <name>Snapshots Repository</name>
+            <url>$https://ul.tsc-nantes.com/nexus/repository/DTO-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.mpoulhazan.websocket</groupId>
+                <artifactId>websocket-app</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

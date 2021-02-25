@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:websocket-server.db
+    username: postgres
+    password: postgres
+    driverClassName: org.sqlite.JDBC
+    hikari:
+      maximum-pool-size: 1
+
+  data.web.pageable:
+    default-page-size: 4000
+    max-page-size: 4000
+
+  jpa:
+    hibernate:
+      ddl-auto: create # create the schema and destroy previous data
+      #ddl-auto: create-drop # drop the schema at the end of the session
+      #ddl-auto: update # update the schema with the given values (if schema is not present in the DB then the schema is created)
+      #ddl-auto: validate # validate the schema, makes no changes to the database
+
+server:
+  servlet.context-path: /websocket
+  port: 136
+
+# Fichier de configuration de Logback
+logging:
+  level:
+    # niveau des logs
+    com.mpoulhazan.websocket.*: INFO
+  config: ./src/test/resources/logback.xml
